@@ -1,0 +1,193 @@
+Name,ShortName,ModeAndPID,Equation,Min Value,Max Value,Units,Header,startDiagnostic,stopDiagnostic,Scale,Updated,Notes
+~List by Sean Graham obd@wackyland.net,List Credit,,,,,,,,,,28-Mar,List updated and maintained by Sean Graham (obd@wackyland.net). Please contact if you have any changes!
+!Inst Kpower,Inst P (KW),,[222885]*[222414]/1000,-200,200,KW,,,,1,,
+!Inst W/kph,W/kph,,[222885]*[222414]/[22000D],-10000,10000,W/kph,,,,1,,
+!Inst W/mph,W/mph,,[222885]*[222414]/([22000D]/1.61),-10000,10000,W/mph,,,,1,,
+*Charger AC Current,CAC Amps,224369,A*.2,0,40,A,7E4,,,1,1-Feb,
+*Charger AC Voltage,CAC Volts,224368,A*2,0,500,V,7E4,,,1,1-Feb,
+*Charger AC Power,CAC Power,,[224369]*[224368]/1000,0,8,KW,,,,1,6-Apr,Thanks Aviad
+!Charger HV Current,CDC Amps,22436C,((Signed(A)*256+b))/20,0,200,A,7E4,,,1,1-Feb,
+!Charger HV Voltage,CDC Volts,22436B,((A*256)+B)/2,0,500,V,7E4,,,1,1-Feb,
+!Charger HV Power,CDC Power,,[22436C]*[22436B]/1000,0,60,KW,,,,1,6-Apr,Thanks Aviad
+!HV Current,HV Amps,222414,(Signed(A)*256+B)/20,-200,500,A,7E1,,,1,1-Feb,
+!HV Current HD,HV Amps HD,224356,(Signed(A)*256+B)/(-6.666),-200,500,A,7E4,,,1,31-Mar,
+!MG Voltage,MG V,222885,((A*256)+B)/100,0,500,V,7E1,,,1,21-Mar,Primary Battery-Side Voltage
+*MG Voltage 2,MG1 1C24,221C24,((A*256)+B)/100,0,500,V,7E1,,,1,21-Mar,"The rest are all PIDs that clearly are system bus voltage levels, slightly different"
+*MG Voltage 3,MG3 28CF,2228CF,((A*256)+B)/50,0,500,V,7E1,,,1,21-Mar,"or offset from above, but all do the same thing. Not sure where they all come from."
+*MG Voltage 4,MG4 28D0,2228D0,((A*256)+B)/50,0,500,V,7E1,,,1,21-Mar,
+*MG Voltage 5,MG5 28FB,2228FB,((A*256)+B)/100,0,500,V,7E1,,,1,21-Mar,
+*MG Voltage 6,MG6 4329,224329,((A*256)+B)/16.8887,0,500,V,7E4,,,1,21-Mar,
+*MG Voltage 7,MG7 432D,22432D,((A*256)+B)/2,0,500,V,7E4,,,1,21-Mar,
+!State of Charge Raw,SoC Raw,015B,A*100/255,0,100,%,,,,1,1-Feb,
+*State of Charge Raw 2,SoC Raw 2,222411,A*100/255,0,255,?,7E1,,,1,1-Feb,Slightly different from the one above
+!Battery Capacity,Bat Capacity,2241A3,((A*256)+B)/30,0,65,kWh,7E4,,,1,23-Mar,"This one is very interesting, perhaps recalibrated after a charge or full charge? PLEASE EMAIL SEAN with your values and notes when it changes!"
+!State Of Charge HD Raw,SoC Raw HD,2243AF,((((A*256)+B)*100)/65535),0,105,%,7E4,,,1,1-Feb,
+!Battery Level Displayed,Batt % DIC,228334,A*100/255,0,100,%,7E4,,,1,23-Mar,
+*Speed kmh,Speed,22000D,A,0,160,kmh,7E0,,,1,1-Feb,
+*Speed mph,Speed,22000D,(A/1.61),0,100,mph,7E0,,,1,1-Feb,
+*Tran Temp,Tran Temp,221940,A-40,-40,100,C,7E1,,,1,1-Feb,
+*Last Charge AC Wh,Last Chrg Wh,22437D,((A*256)+B)*10,0,65535,Wh,7E4,,,1,1-Feb,
+*Last Charge AC KWh,Last Chrg KWh,,[22437D]/1000,0,65,KWh,,,,1,6-Apr,Thanks Aviad
+*Gear Position,PRNDL,222889,A,0,8,,7E1,,,1,1-Feb,
+*Batt Coolant Pump RPM,Batt Cool RPM,2241B2,(Signed(A)*256+B),0,5000,RPM,7E4,,,1,23-Mar,
+!Heater - Cabin,Cabin Heat,2241B4,(Signed(A)*256+B),0,7500,W,7E4,,,1,1-Feb,
+!Heater - Battery,Batt Heat,2241B6,(Signed(A)*256+B),0,5000,W,7E4,,,1,1-Feb,
+!Batt Temp,Batt Temp,22434F,A-40,-40,100,C,7E4,,,1,1-Feb,Not sure of header
+*Batt Temp 2416,Batt Temp 2416,222416,A-40,-40,100,C,7E1,,,1,21-Mar,Not sure of header
+*Batt Temp 2417,Batt Temp 2417,222417,A-40,-40,100,C,7E1,,,1,21-Mar,Not sure of header
+!Electronics Temp 1,Ele.Temp 1,221C26,A-40,-20,100,C,7E0,,,1,23-Mar,Not sure of header
+*Electronics Temp 2,Ele.Temp 2,221C28,A-40,-20,100,C,7E0,,,1,23-Mar,Not sure of header
+*Electronics Temp 3,Ele.Temp 3,221C2A,A-40,-20,100,C,7E0,,,1,23-Mar,Not sure of header
+*H2 Electronics Temp,Ele.Temp H2,221C43,A-40,-20,100,C,7E0,,,1,23-Mar,Not sure of header
+*H2 Temp 2,Ele.Temp H2.2,2282B2,(A-80)/8,-20,100,C,7E4,,,1,23-Mar,Not sure of header
+!Trans RPM,RPM,221942,((A*256)+B)/8,0,8810,?,7E1,,,1,1-Feb,
+!Air Temp 0,Air Temp 0,0146,(A-40),-40,100,C,7E0,,,1,6-Apr,"Switched to 0146 as per ""Ampera E"" recommendation"
+*Air Temp 1,Air Temp 1,22801E,(A/2)-40,-40,100,C,7E4,,,1,21-Mar,
+*Air Temp 2,Air Temp 2,22801F,(A/2)-40,-40,100,C,7E4,,,1,21-Mar,
+!Brake Torque,Brake Tq,22242C,(Signed(A)*256+B),-32768,32767,N-m,7E1,,,1,23-Mar,
+*AC Low Side Preassure,AC Low,221563,A,0,255,kPa,7E4,,,1,23-Mar,Double check the Header???
+*AC High Side Preassure,AC High,221564,A,0,255,kPa,7E0,,,1,23-Mar,Double check the Header???
+*M Control Module Voltage,Ctrl Mod V,220042,(A*256+B)/1000,0,32,V,7E0,,,1,23-Mar,
+,,,,,,,,,,,,
+?MG Current ?,?MG A1,2224DF,(Signed(A)*256+B)/10,-600,600,A,7E1,,,1,23-Mar,Motor-side current (not battery-side). I think.
+?MG Other Current ?,?MG A2,222883,(Signed(A)*256+B)/10,-600,600,A,7E1,,,1,23-Mar,
+,,,,,,,,,,,,
+?Unknown 2228DE,?2228DE,2228DE,(Signed(A)*256+B),-32768,32767,?,7E1,,,1,1-Feb,"These are all interesting, and they do change, but not sure what they are yet"
+?Unknown 2228E1,?2228E1,2228E1,(Signed(A)*256+B),-32768,32767,?,7E1,,,1,1-Feb,
+?Unknown 2228E4,?2228E4,2228E4,(Signed(A)*256+B),-32768,32767,?,7E1,,,1,1-Feb,
+?Unknown 2228F1,?2228F1,2228F1,(Signed(A)*256+B),-32768,32767,?,7E1,,,1,1-Feb,"can be close to zero when constant speed, spikes big negative with acceleration, medium spike negative when decel - could be voltage present on the motor?"
+?Unknown 2228F2,?2228F2,2228F2,(Signed(A)*256+B),-32768,32767,?,7E1,,,1,1-Feb,"could be force or current; strong positive during accel, negative during decel; "
+?Unknown 2228F4,?2228F4,2228F4,(Signed(A)*256+B),-32768,32767,?,7E1,,,1,1-Feb,"always zero, one single instance where it was -818, another -8"
+?Unknown 2228F8,?2228F8,2228F8,(Signed(A)*256+B),-32768,32767,?,7E1,,,1,1-Feb,"big values while driving, near zero otherwise, might not be a signed value"
+?Unknown 2228F9,?2228F9,2228F9,(Signed(A)*256+B),-32768,32767,?,7E1,,,1,1-Feb,10661 neutral value while charging
+?Unknown 2228FE,?2228FE,2228FE,((A*256)+B),0,65535,?,7E1,,,1,1-Feb,2000 neutral value while charging and not moving
+,,,,,,,,,,,,
+?Unknown 222428,?222428,222428,((A*256)+B),0,65535,?,7E1,,,1,1-Feb,
+?Unknown 222429 HVV,?222429 HVV,222429,((A*256)+B),0,65535,?,7E1,,,1,21-Mar,
+?Unknown 22242D,?22242D,22242D,((A*256)+B),0,65535,?,7E1,,,1,1-Feb,
+?Unknown 222434,?222434,222434,((A*256)+B),0,65535,?,7E1,,,1,1-Feb,HV Volt from HCP?
+?Unknown 22288A,?22288A,22288A,((A*256)+B),0,65535,?,7E1,,,1,1-Feb,
+,,,,,,,,,,,,
+?V 224331,?V 4331,224331,((A*256)+B)/4,0,500,V,7E4,,,1,1-Feb,"- interesting voltages, track with MGA but offset. Doesn't appear to be correlated to battery temp."
+?V 224332,?V 4332,224332,((A*256)+B)/4,0,500,V,7E4,,,1,1-Feb,
+?V 224333,?V 4333,224333,((A*256)+B)/4,0,500,V,7E4,,,1,1-Feb,
+,,,,,,,,,,,,
+?Unknown 22194F,?22194F,22194F,A,0,255,?,7E1,,,1,1-Feb,- some sort of gear position
+?Unknown 22197E,?22197E,22197E,A,0,255,?,7E1,,,1,1-Feb,- always 160
+,,,,,,,,,,,,
+?Interesting 433B,?Hmm 433B,22433B,((A*256)+B),0,65535,?,7E4,,,1,1-Feb,
+?Unknown 224357,?224357,224357,A,0,255,?,7E4,,,1,1-Feb,
+?Unknown 22439C,?22439C,22439C,A,0,255,?,7E4,,,1,1-Feb,
+,,,,,,,,,,,,
+?Charging Limit ?,? Chg Limit,2241B7,(Signed(A)*256+b),0,32000,W,7e4,,,1,23-Mar,"Always zero, but that could just mean no limit, but I almost always L3 charge. I need to look at this under L2."
+*L2 Charger Active,L2 Charger,224373,(Signed(A)*256+b),-1,0,?,7E4,,,1,23-Mar,"-1 when L2, 0 otherwise"
+?Unknown 22835A,?22835A,22835A,Signed(A),-5,0,?,7E4,,,1,23-Mar,"low single digit negative, no pattern"
+?Unknown 22433C,?22433C,22433C,((A*256)+B),0,65535,?,7E4,,,1,1-Mar,"Not voltage - stays almost perfectly constant, +/- 1"
+,,,,,,,,,,,,
+*BECM 5V Reference Voltage 1,+5V REF 1,2240D3,5+((SIGNED(A)*256+B)*5/65536),0,6,V,7E7,,,1,24-Mar,
+*BECM 5V Reference Voltage 2,+5V REF 2,2240D4,5+((SIGNED(A)*256+B)*5/65536),0,6,V,7E7,,,1,24-Mar,
+*BECM Battery Section 1 Temp,Batt Sec 1 Temp,2240D7,A-40,-40,100,C,7E7,,,1,24-Mar,
+*BECM Battery Section 2 Temp,Batt Sec 2 Temp,2240D9,A-40,-40,100,C,7E7,,,1,24-Mar,
+*BECM Battery Section 3 Temp,Batt Sec 3 Temp,2240DB,A-40,-40,100,C,7E7,,,1,24-Mar,
+*BECM Battery Section 4 Temp,Batt Sec 4 Temp,2240DD,A-40,-40,100,C,7E7,,,1,24-Mar,
+*BECM Battery Section 5 Temp,Batt Sec 5 Temp,2240DF,A-40,-40,100,C,7E7,,,1,24-Mar,
+*BECM Battery Section 6 Temp,Batt Sec 6 Temp,2240E1,A-40,-40,100,C,7E7,,,1,24-Mar,
+*BECM Battery Coolant Temp ?,Batt Coolant Temp ?,2241A4,A-40,-40,100,C,7E7,,,1,24-Mar,
+*BECM Average Cell Voltage ?,Avg Cell,22C218,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,31-Mar,Maybe. I think so.
+,,,,,,,,,,,,
++Battery Cell Voltage #1,Cell 1,224181,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #2,Cell 2,224182,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #3,Cell 3,224183,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #4,Cell 4,224184,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #5,Cell 5,224185,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #6,Cell 6,224186,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #7,Cell 7,224187,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #8,Cell 8,224188,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #9,Cell 9,224189,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #10,Cell 10,22418A,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #11,Cell 11,22418B,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #12,Cell 12,22418C,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #13,Cell 13,22418D,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #14,Cell 14,22418E,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #15,Cell 15,22418F,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #16,Cell 16,224190,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #17,Cell 17,224191,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #18,Cell 18,224192,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #19,Cell 19,224193,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #20,Cell 20,224194,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #21,Cell 21,224195,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #22,Cell 22,224196,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #23,Cell 23,224197,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #24,Cell 24,224198,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #25,Cell 25,224199,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #26,Cell 26,22419A,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #27,Cell 27,22419B,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #28,Cell 28,22419C,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #29,Cell 29,22419D,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #30,Cell 30,22419E,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #31,Cell 31,22419F,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #32,Cell 32,224200,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #33,Cell 33,224201,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #34,Cell 34,224202,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #35,Cell 35,224203,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #36,Cell 36,224204,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #37,Cell 37,224205,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #38,Cell 38,224206,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #39,Cell 39,224207,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #40,Cell 40,224208,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #41,Cell 41,224209,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #42,Cell 42,22420A,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #43,Cell 43,22420B,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #44,Cell 44,22420C,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #45,Cell 45,22420D,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #46,Cell 46,22420E,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #47,Cell 47,22420F,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #48,Cell 48,224210,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #49,Cell 49,224211,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #50,Cell 50,224212,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #51,Cell 51,224213,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #52,Cell 52,224214,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #53,Cell 53,224215,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #54,Cell 54,224216,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #55,Cell 55,224217,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #56,Cell 56,224218,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #57,Cell 57,224219,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #58,Cell 58,22421A,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #59,Cell 59,22421B,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #60,Cell 60,22421C,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #61,Cell 61,22421D,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #62,Cell 62,22421E,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #63,Cell 63,22421F,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #64,Cell 64,224220,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #65,Cell 65,224221,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #66,Cell 66,224222,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #67,Cell 67,224223,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #68,Cell 68,224224,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #69,Cell 69,224225,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #70,Cell 70,224226,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #71,Cell 71,224227,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #72,Cell 72,224228,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #73,Cell 73,224229,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #74,Cell 74,22422A,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #75,Cell 75,22422B,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #76,Cell 76,22422C,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #77,Cell 77,22422D,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #78,Cell 78,22422E,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #79,Cell 79,22422F,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #80,Cell 80,224230,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #81,Cell 81,224231,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #82,Cell 82,224232,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #83,Cell 83,224233,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #84,Cell 84,224234,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #85,Cell 85,224235,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #86,Cell 86,224236,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #87,Cell 87,224237,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #88,Cell 88,224238,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #89,Cell 89,224239,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #90,Cell 90,22423A,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #91,Cell 91,22423B,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #92,Cell 92,22423C,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #93,Cell 93,22423D,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #94,Cell 94,22423E,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #95,Cell 95,22423F,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
++Battery Cell Voltage #96,Cell 96,224240,((A*256)+B)*5/65536,2.5,4.2,V,7E7,,,1,24-Mar,
