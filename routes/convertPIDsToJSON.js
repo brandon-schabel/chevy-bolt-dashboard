@@ -1,12 +1,20 @@
+// direct link to Chevy Bolt Custom PID spreadsheet
 const parse = require('csv-parse')
 const fs = require('fs')
 var inputFile = './ChevyBoltPIDS.csv'
 
 var PIDObj = {}
-
+var line1Formatted;
+var line2Formatted;
 var parser = parse({delimiter: ','}, function(err, data) {
+  data.splice(0,1)
   data.forEach(function(line) {
-    PIDObj[line[1]] = line[2]
+    line1Formatted = line[1].replace(/[`~!@#$%^&*()_|+\-=÷¿?;:'",.<>\{\}\[\]\\\/\s]/g,''); // remove all special characters and spaces
+    line2Formatted = line[2].replace(/[`~!@#$%^&*()_|+\-=÷¿?;:'",.<>\{\}\[\]\\\/\s]/g,'');
+    if(line2Formatted.length > 0 || line1Formatted.length > 0) { //check to make sure each cell contains data
+      PIDObj[line2Formatted] = line1Formatted
+    }
+
   });
   console.log(PIDObj)
 
