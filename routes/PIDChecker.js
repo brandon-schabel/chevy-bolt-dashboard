@@ -1,3 +1,4 @@
+// this file is used to check know Bolt PIDs against the PIDs in the log
 const parse = require('csv-parse')
 const fs = require('fs')
 var inputFile = './boltdata.csv'
@@ -22,15 +23,7 @@ var parser = parse({delimiter: ','}, function(err, data) {
       console.log("Not a PID: ", PID)
     }
   })
-  for(var i= 0; i < data[0].length; i++) {
-    // console.log(data[0][i])
-    // console.log(data[i][0])
-  }
-  data.forEach(function(line) {
-    // console.log(line)
-    //var batteryCharge = { "charge": line[3] }
-    // console.log(JSON.stringify(batteryCharge));
-  });
 })
+
 // read the inputFile, feed the contents to the parser
 fs.createReadStream(inputFile).pipe(parser)

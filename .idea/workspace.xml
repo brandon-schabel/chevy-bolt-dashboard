@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a7df17b-d3c3-457a-b861-314eb26fb297" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/routes/CSVLogParsing.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/routes/PIDs.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/routes/PIDChecker.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/routes/CSVLogParsing.js" afterPath="$PROJECT_DIR$/routes/CSVLogParsing.js" />
       <change beforePath="$PROJECT_DIR$/routes/ChevyBoltPIDS.csv" afterPath="$PROJECT_DIR$/routes/ChevyBoltPIDS.csv" />
-      <change beforePath="$PROJECT_DIR$/routes/PIDs.js" afterPath="" />
       <change beforePath="$PROJECT_DIR$/routes/convertPIDsToJSON.js" afterPath="$PROJECT_DIR$/routes/convertPIDsToJSON.js" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,16 +20,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/users.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -42,21 +30,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CSVLogParsing.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CSVLogParsing.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/CSVLogParsing.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+            <state relative-caret-position="621">
+              <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="convertPIDsToJSON.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PIDChecker.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/PIDChecker.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="convertPIDsToJSON.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/convertPIDsToJSON.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-74">
-              <caret line="11" column="134" lean-forward="false" selection-start-line="11" selection-start-column="134" selection-end-line="11" selection-end-column="134" />
+            <state relative-caret-position="414">
+              <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -132,9 +130,10 @@
       <list>
         <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/routes/PIDs.js" />
-        <option value="$PROJECT_DIR$/routes/convertPIDsToJSON.js" />
         <option value="$PROJECT_DIR$/routes/PIDs.json" />
         <option value="$PROJECT_DIR$/routes/CSVLogParsing.js" />
+        <option value="$PROJECT_DIR$/routes/PIDChecker.js" />
+        <option value="$PROJECT_DIR$/routes/convertPIDsToJSON.js" />
       </list>
     </option>
   </component>
@@ -235,7 +234,7 @@
       <updated>1524801908783</updated>
       <workItem from="1524801918270" duration="2739000" />
       <workItem from="1524891481197" duration="1901000" />
-      <workItem from="1524897361861" duration="9416000" />
+      <workItem from="1524897361861" duration="10330000" />
     </task>
     <task id="LOCAL-00001" summary="Test basic parsing">
       <created>1524898006456</created>
@@ -251,11 +250,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524928429362</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add additional formatting for PID parsing, test data log parsing">
+      <created>1524933583133</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1524933583133</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14056000" />
+    <option name="totallyTimeSpent" value="14970000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="318" y="165" width="1680" height="1027" extended-state="0" />
@@ -291,7 +297,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Test basic parsing" />
     <MESSAGE value="Create parser for extracting PIDs/names into JSON" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create parser for extracting PIDs/names into JSON" />
+    <MESSAGE value="Add additional formatting for PID parsing, test data log parsing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add additional formatting for PID parsing, test data log parsing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -427,18 +434,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/PIDJSONOutput.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="153" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="3269" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/PIDs.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3466">
           <caret line="171" column="11" lean-forward="false" selection-start-line="171" selection-start-column="11" selection-end-line="171" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/PIDChecker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/PIDJSONOutput.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="153" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="3269" />
           <folding />
         </state>
       </provider>
@@ -451,18 +466,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/convertPIDsToJSON.js">
+    <entry file="file://$PROJECT_DIR$/routes/CSVLogParsing.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-74">
-          <caret line="11" column="134" lean-forward="false" selection-start-line="11" selection-start-column="134" selection-end-line="11" selection-end-column="134" />
+        <state relative-caret-position="621">
+          <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/CSVLogParsing.js">
+    <entry file="file://$PROJECT_DIR$/routes/convertPIDsToJSON.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
-          <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+          <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
           <folding />
         </state>
       </provider>
