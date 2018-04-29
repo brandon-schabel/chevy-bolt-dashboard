@@ -9,13 +9,13 @@ console.log(PIDs)
 var parser = parse({delimiter: ','}, function(err, data) {
   data[0].forEach(function(PID) {
     PID = PID.toUpperCase();
-    if(PID[0] === 'K') {
+    if(PID[0] === 'K') { // for some reason torque logs adds k's to the pids in the log
       PID = PID.substring(1, PID.length);
 
       if(PIDs[PID] === undefined) {
         console.log('PID Not Found in Log(probably regular PID): ', PID);
       } else {
-        console.log('PID Found In Log: Nane: ', PIDs[PID], PID)
+        console.log('PID Found In Log: Name: ', PIDs[PID], PID)
       }
 
     }
